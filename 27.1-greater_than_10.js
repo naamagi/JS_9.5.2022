@@ -3,25 +3,25 @@
 const isValueGreaterThan10 = (number) => {
   return new Promise((resolve, reject) => {
     if (number > 10) {
-      resolve();
+      resolve("resolved");
     } else if (number < 10) {
-      reject();
+      reject("rejected");
     }
   });
 };
 
 isValueGreaterThan10(12)
-  .then(() => {
-    console.log("resolved");
+  .then((res) => {
+    console.log(res);
   })
-  .catch(() => {
-    console.log("rejected");
+  .catch((res) => {
+    console.log(res);
   });
 
 isValueGreaterThan10(8)
-  .then(() => {
-    console.log("resolved");
+  .then((res) => {
+    console.log(res);
   })
-  .catch(() => {
-    console.log("rejected");
+  .catch((res) => {
+    console.log(res);
   });
