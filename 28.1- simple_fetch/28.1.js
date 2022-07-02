@@ -9,7 +9,16 @@ const getJoke = (event) => {
       return response.json();
     })
     .then((data) => {
-        console.log(data);
+      const name = document.getElementsByClassName("title")[0];
+      if (name) {
+        const tempParent = name.parentElement;
+        tempParent.removeChild(name);
+      }
+      const content = document.getElementsByClassName("content")[0];
+      if (content) {
+        const tempParent = content.parentElement;
+        tempParent.removeChild(content);
+      }
       const jokeTitleDiv = document.createElement("div");
       jokeTitleDiv.className = "title";
       jokeTitleDiv.innerText = data.contents.jokes[0].joke.title;
